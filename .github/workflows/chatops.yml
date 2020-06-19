@@ -16,7 +16,7 @@ jobs:
 
     - name: Checkout
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
-      uses: uses: actions/checkout@vmaster
+      uses: uses: actions/checkout@master
 
     - name: Setup python
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
