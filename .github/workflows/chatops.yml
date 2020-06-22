@@ -44,8 +44,8 @@ jobs:
     - name: Comment
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
       uses: peter-evans/create-or-update-comment@v1
-        with:
-          issue-number: steps.prcomm.outputs.PULL_REQUEST_NUMBER
-          body: "evaluated"
+      with:
+        issue-number: steps.prcomm.outputs.PULL_REQUEST_NUMBER
+        body: python evaluate.py
 
 
