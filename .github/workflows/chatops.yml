@@ -45,7 +45,7 @@ jobs:
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
       uses: peter-evans/create-or-update-comment@v1
         with:
-          issue-number: echo steps.prcomm.outputs.PULL_REQUEST_NUMBER
+          issue-number: steps.prcomm.outputs.PULL_REQUEST_NUMBER
           body: "evaluated"
 
 
