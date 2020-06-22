@@ -33,10 +33,6 @@ jobs:
         python -m pip install setuptools
         python -m pip install -r requirements.txt
 
-    - name: Evaluation
-      if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
-      run: python evaluate.py
-
     - name: Evaluate and Save Results
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
       run: |
