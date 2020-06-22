@@ -36,7 +36,6 @@ jobs:
     - name: Evaluation
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
       run: python evaluate.py
-      id: evaluate
 
     - name: Evaluate and Save Results
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
