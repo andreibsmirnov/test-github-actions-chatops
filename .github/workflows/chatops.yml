@@ -39,13 +39,15 @@ jobs:
 
     - name: PR Id
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
-      run: echo steps.prcomm.outputs.PULL_REQUEST_NUMBER
+      run: echo "PR# ${PR_NUMBER}"
+      env:
+          PR_NUMBER: ${{ steps.prcomm.outputs.PULL_REQUEST_NUMBER }}
 
     - name: Comment
       if: steps.prcomm.outputs.BOOL_TRIGGERED == 'true'
       uses: peter-evans/create-or-update-comment@v1
       with:
-        issue-number: steps.prcomm.outputs.PULL_REQUEST_NUMBER
+        issue-number: ${{ steps.prcomm.outputs.PULL_REQUEST_NUMBER }}
         body: "python evaluate.py"
 
 
