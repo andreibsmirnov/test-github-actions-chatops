@@ -46,6 +46,6 @@ jobs:
       uses: peter-evans/create-or-update-comment@v1
         with:
           issue-number: steps.prcomm.outputs.PULL_REQUEST_NUMBER
-          body: "evaluated"
+          body: python evaluate.py
 
 
